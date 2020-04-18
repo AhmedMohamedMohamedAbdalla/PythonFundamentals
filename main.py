@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 # Created by Ahmed Mohamed Mohamed Abdalla Sleem
@@ -79,6 +80,10 @@ def getChoiceInput() :
 		choice = input('Please enter valid choice >> ')
 	return choice
 
+def goBack(dashboard) :
+	if input('Press any key to go back.. ') is not None :
+		printDashboard(dashboard)
+
 def checkChoice(dashboard) :
 	choice: int = getChoiceInput()
 
@@ -109,8 +114,7 @@ def checkChoice(dashboard) :
 		elif choice == 4 :
 			clearConsole()
 			print('This app is coded by Ahmed Sleem @TheYoungProgrammer')
-			time.sleep(3)
-			printDashboard(mainDashboard)
+			goBack(mainDashboard)
 
 		else :
 			print('Ok ' + username + '.. Thanks For Trying Python Fundamentals :)')
@@ -120,27 +124,27 @@ def checkChoice(dashboard) :
 		if choice == 0 :
 			clearConsole()
 			print(str(input('Enter the text to capitalize it : ')).capitalize())
-			printDashboard(stringOperationsDashboard)
+			goBack(stringOperationsDashboard)
 
 		elif choice == 1 :
 			clearConsole()
 			strBase1: str = input('Enter the base text to search in : ')
 			searchWord: str = input('Enter the word to search : ')
 			print('Text is \'' + strBase1[strBase1.find(searchWord) :len(strBase1)] + '\'')
-			printDashboard(stringOperationsDashboard)
+			goBack(stringOperationsDashboard)
 
 		elif choice == 2 :
 			clearConsole()
 			print(str(input('Enter the text to capitalize it : ')).lower())
-			printDashboard(stringOperationsDashboard)
+			goBack(stringOperationsDashboard)
 
 		elif choice == 3 :
 			clearConsole()
 			print(str(input('Enter the text to Upper it : ')).upper())
-			printDashboard(stringOperationsDashboard)
+			goBack(stringOperationsDashboard)
 
 		else :
-			printDashboard(mainDashboard)
+			goBack(mainDashboard)
 
 	elif dashboard == mathematicalOperationsDashboard :
 		if choice == 0 :
@@ -148,64 +152,64 @@ def checkChoice(dashboard) :
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(num1 + num2))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 1 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(num1 - num2))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 2 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(num1 * num2))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 3 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(num1 / num2))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 4 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(num1 ** num2))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 5 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(max(num1, num2)))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 6 :
 			clearConsole()
 			num1 = int(input('Enter the first number : '))
 			num2 = int(input('Enter the second number : '))
 			print('Result is ' + str(min(num1, num2)))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 7 :
 			clearConsole()
 			num1 = float(input('Enter the number : '))
 			print('Result is ' + str(round(num1)))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		elif choice == 8 :
 			clearConsole()
 			num1 = int(input('Enter the negative number : '))
 			print('Result is ' + str(abs(num1)))
-			printDashboard(mathematicalOperationsDashboard)
+			goBack(mathematicalOperationsDashboard)
 
 		else :
-			printDashboard(mainDashboard)
+			goBack(mainDashboard)
 
 	elif dashboard == logicalOperationsDashboard :
 		if choice == 0 :
@@ -216,7 +220,7 @@ def checkChoice(dashboard) :
 				print('Both Objects are the same')
 			else :
 				print('Both Objects are different')
-			printDashboard(logicalOperationsDashboard)
+			goBack(logicalOperationsDashboard)
 		elif choice == 1 :
 			clearConsole()
 			obj3 = input('Enter first object : ')
@@ -225,7 +229,7 @@ def checkChoice(dashboard) :
 				print(str(obj3) + ' is greater than ' + str(obj4))
 			else :
 				print(str(obj3) + ' is less than ' + str(obj4))
-			printDashboard(logicalOperationsDashboard)
+			goBack(logicalOperationsDashboard)
 
 		elif choice == 2 :
 			clearConsole()
@@ -235,11 +239,11 @@ def checkChoice(dashboard) :
 				print('\'' + str(child) + '\' is in \'' + parent + '\'')
 			else :
 				print('\'' + str(child) + '\' isn\'t in \'' + parent + '\'')
-			printDashboard(logicalOperationsDashboard)
+			goBack(logicalOperationsDashboard)
 
 		else :
 			clearConsole()
-			printDashboard(mainDashboard)
+			goBack(mainDashboard)
 
 if __name__ == '__main__' :
 	banner: str = '- ' + welcomeMessage + '.. Created By : Ahmed Sleem @TYP -'
