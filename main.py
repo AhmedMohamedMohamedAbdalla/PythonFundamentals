@@ -4,6 +4,7 @@ import os
 # 18/4/2020
 # theyoungprogrammer67@gmail.com
 
+welcomeMessage: str = "Welcome to Python Fundamentals CLI Program"
 username: str = None
 mainDashboard = \
 	[
@@ -40,10 +41,29 @@ logicalOperationsDashboard = \
 		'Is Child In Parent'
 	]
 
+def printHeader(dashboard) :
+	headerMsgLength: int = round(len(welcomeMessage) / 2 - len(username) / 2)
+	lineLength: int = round(len('-' * len(welcomeMessage)))
+	print('-' * len(welcomeMessage))
+	print((' ' * headerMsgLength + username))
+	if dashboard == stringOperationsDashboard :
+		print(' ' * round(lineLength / 2 - len('String Operations') / 2) + 'String Operations')
+		print('-' * len(welcomeMessage))
+	elif dashboard == mathematicalOperationsDashboard :
+		print(' ' * round(lineLength / 2 - len('Mathematical Operations') / 2) + 'Mathematical Operations')
+		print('-' * len(welcomeMessage))
+	elif dashboard == logicalOperationsDashboard :
+		print(' ' * round(lineLength / 2 - len('Logical Operations') / 2) + 'Logical Operations')
+		print('-' * len(welcomeMessage))
+	else :
+		print(welcomeMessage)
+		print('-' * len(welcomeMessage))
+
 def clearConsole() :
 	os.system('cls' if os.name == 'nt' else 'clear')
 
 def printDashboard(dashboard) :
+	printHeader(dashboard)
 	counter: int = 0
 	for dashboardItem in dashboard :
 		print(str(counter) + '.' + dashboardItem)
@@ -206,14 +226,9 @@ def checkChoice(dashboard) :
 			printDashboard(mainDashboard)
 
 if __name__ == '__main__' :
-	welcomeMessage: str = "Welcome to Python Fundamentals CLI Program"
-	print('-' * 78)
 	banner: str = '- ' + welcomeMessage + '.. Created By : Ahmed Sleem @TYP -'
+	print('-' * len(banner))
 	print(banner)
 	print('-' * len(banner))
 	username = str(input('Please tell me your name : '))
-	print('-' * len(welcomeMessage))
-	print((" " * round(len(welcomeMessage) / 2 - len(username) / 2)) + username)
-	print(welcomeMessage)
-	print('-' * len(welcomeMessage))
 	printDashboard(mainDashboard)
