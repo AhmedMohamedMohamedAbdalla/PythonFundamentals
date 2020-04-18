@@ -114,7 +114,8 @@ def checkChoice(dashboard) :
 		elif choice == 4 :
 			clearConsole()
 			print('This app is coded by Ahmed Sleem @TheYoungProgrammer')
-			goBack(mainDashboard)
+			time.sleep(3)
+			printDashboard(mainDashboard)
 
 		else :
 			print('Ok ' + username + '.. Thanks For Trying Python Fundamentals :)')
@@ -144,7 +145,7 @@ def checkChoice(dashboard) :
 			goBack(stringOperationsDashboard)
 
 		else :
-			goBack(mainDashboard)
+			printDashboard(mainDashboard)
 
 	elif dashboard == mathematicalOperationsDashboard :
 		if choice == 0 :
@@ -209,7 +210,7 @@ def checkChoice(dashboard) :
 			goBack(mathematicalOperationsDashboard)
 
 		else :
-			goBack(mainDashboard)
+			printDashboard(mainDashboard)
 
 	elif dashboard == logicalOperationsDashboard :
 		if choice == 0 :
@@ -243,7 +244,7 @@ def checkChoice(dashboard) :
 
 		else :
 			clearConsole()
-			goBack(mainDashboard)
+			printDashboard(mainDashboard)
 
 if __name__ == '__main__' :
 	banner: str = '- ' + welcomeMessage + '.. Created By : Ahmed Sleem @TYP -'
